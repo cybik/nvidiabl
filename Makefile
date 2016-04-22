@@ -92,7 +92,7 @@ dkms-remove:
 
 dkms-install: clean dkms-conf
 	sudo mkdir /usr/src/$(TARGET)-$(VERSION)
-	sudo rsync -lr --progress . /usr/src/$(TARGET)-$(VERSION) --exclude install --exclude ".*"	
+	sudo rsync -lr . /usr/src/$(TARGET)-$(VERSION) --exclude install --exclude ".*"	
 	sudo dkms add build install -m $(TARGET) -v $(VERSION)
 
 dkms-release:
